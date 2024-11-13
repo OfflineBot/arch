@@ -44,7 +44,7 @@ function Bar(monitor) {
         class_name: "bar",
         keymode: 'on-demand',
         monitor: monitor,
-        margins: [10, 10, 0, 10],
+        //margins: [10, 10, 0, 10],
         anchor: ["top", "left", "right"],
         exclusivity: "exclusive",
         child: Widget.CenterBox({
