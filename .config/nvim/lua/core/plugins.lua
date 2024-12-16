@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     -- My plugins here
 
+    use 'danymat/neogen'
     use({
         "L3MON4D3/LuaSnip",
 	-- follow latest release.

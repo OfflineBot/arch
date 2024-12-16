@@ -24,6 +24,8 @@ local function on_attach(client, bufnr)
     end
 end
 
+require'lspconfig'.gdscript.setup{}
+
 require("mason-lspconfig").setup_handlers({
     function(server_name)
         lsp[server_name].setup {
@@ -52,6 +54,7 @@ require("mason-lspconfig").setup_handlers({
         }
     end,
 })
+
 
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })

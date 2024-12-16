@@ -1,11 +1,11 @@
-
 local cmp = require'cmp'
 
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            --require('luasnip').lsp_expand(args.body)
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         end,
     },
     window = {
@@ -20,9 +20,9 @@ cmp.setup({
         ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        --{ name = 'vsnip' },
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' },
         { name = 'path' },
     }, {
         { name = 'buffer' },

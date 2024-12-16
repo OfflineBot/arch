@@ -37,3 +37,6 @@ o.clipboard = 'unnamedplus'
 
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+
+vim.opt.textwidth = 80
+vim.opt.wrap = true
