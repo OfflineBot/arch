@@ -1,5 +1,6 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
-import { exec, subprocess, Variable } from "astal"
+import { exec, Variable } from "astal"
+import { time, date } from "../bar/right";
 
 
 const cpu = Variable("").poll(1000, () => {
@@ -20,10 +21,12 @@ const ram = Variable("").poll(1000, () => {
     }
 });
 
-const volume = Variable("").poll(1000, () => {
+const volume = Variable("").poll(100, () => {
     try {
         const out = exec(["bash", "-c", "amixer get Master | grep -o '[0-9]*%' | head -n 1"]);
-        return `${out}`;
+        const is_muted = exec(["bash", "-c", "amixer get Master"]);
+        return is_muted.includes("[off]") ? `muted[${out}]` : `${out}`
+        //return `${out}`;
     } catch (err) {
         return String(err);
     }
@@ -38,21 +41,21 @@ const disk = Variable("").poll(2000, () => {
     }
 });
 
-const gpu = Variable("").poll(1000, () => {
+export const battery = Variable("").poll(2000, () => {
     try {
-        const out = exec(["bash", "-c", "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits"]);
-        return `${out.trim()}%`;
+        // Change the battery path to match your system
+        const out = exec(["bash", "-c", "cat /sys/class/power_supply/BAT0/capacity"]);
+        return `${out.trim()}%`; // Ensure output is clean
     } catch (err) {
         return String(err);
     }
 });
 
-
 const data_box = (name: string, value: Variable<string>) => {
     return <box
         className={`stats-box-${name} stats-box-item`}
         vertical={false}>
-        <label label={name+":"} className={`stat-name stat-${name}`} />
+        <label xalign={0} label={name+":"} className={`stat-name stat-${name}`} />
         <label label={value()} className={`stat-value stat-${name}`} />
     </box>;
 }
@@ -60,7 +63,7 @@ const data_box = (name: string, value: Variable<string>) => {
 
 export default function Stats(gdkmonitor: number) {
     return <window
-        name={`stats-${gdkmonitor}`}
+        name={"stats"}
         visible={false}
         className="Stats"
         exclusivity={Astal.Exclusivity.EXCLUSIVE}
@@ -71,11 +74,13 @@ export default function Stats(gdkmonitor: number) {
         <box
             className={"stats-main-box"}
             vertical={true}>
-            {data_box("GPU", gpu)}
+            {data_box("Time", time)}
+            {data_box("Date", date)}
             {data_box("CPU", cpu)}
             {data_box("RAM", ram)}
             {data_box("DISK", disk)}
             {data_box("SOUND", volume)}
+            {data_box("Battery", battery)}
         </box>
     </window>
 }

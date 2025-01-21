@@ -20,12 +20,13 @@ window.Bar {
     background: transparent;
     color: #ffffff;
     font-weight: bold;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
 
     >centerbox {
         background: #{$bg1};
-        border-radius: 5px;
-        margin: 5px;
+        /*border-radius: 5px;*/
+        /*margin: 5px;*/
+        border-bottom: 1px solid #{$border};
         margin-bottom: 0px;
         border-top: none;
         border-left: none;
@@ -36,6 +37,7 @@ window.Bar {
 .bar-item {
     margin-right: 5px;
     margin-left: 5px;
+    font-size: 12px;
 }
 
 .bar-date {
@@ -44,6 +46,10 @@ window.Bar {
 
 .bar-time {
     color: #{$cyan};
+}
+
+.bar-battery {
+  color: #{$yellow};
 }
 
 .bar-off {
@@ -55,15 +61,21 @@ window.Bar {
 }
 
 .wk-item {
-    border: 1px solid #{$border};
-    border-radius: 4px;
-    padding: 0 4px 0 4px;
-    margin: 5px 2px 5px 2px;
     font-size: 12px;
+    padding: 0 4px 0 4px;
+    margin: 0;
+}
+.wk-btn {
+    font-size: 11px;
+    border: 1px solid #{$border};
+    padding: 0;
+    border-radius: 4px;
+    margin: 5px 2px 5px 2px;
 }
 
 .wk-active {
     border-color: #{$purple};
+    color: #{$purple};
 }
 
 .wk-active-window {
@@ -88,6 +100,7 @@ window.Bar {
     background-color: #{$bg1};
     padding: 10px;
     border: 1px solid #{$border};
+    margin: 5px;
     border-radius: 5px;
 }
 
@@ -110,3 +123,4 @@ window.Bar {
 .Applauncher3 {
     background-color: #000;
 }
+

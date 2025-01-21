@@ -37,7 +37,11 @@ function left_side() {
     return <box halign={Gtk.Align.START} className="bar-workspace bar-item">
         {workspaces().as((v: { [key: string]: string} ) => (
             Object.entries(v).map(([key, value]) => (
-                <label label={`${key}`} className={`wk-${key} wk-${value} wk-item`} />
+                <button
+                    className={`wk-btn wk-${value}`}
+                    onClick={`hyprctl dispatch "workspace ${key}"`}>
+                    <label label={`${key}`} className={`wk-${key} wk-${value} wk-item`} />
+                </button>
             ))  
         ))}
     </box>
