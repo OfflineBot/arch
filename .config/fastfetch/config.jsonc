@@ -1,36 +1,76 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "modules": [
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "modules": [
 
-    "title",
+        {
+            "type": "title",
+            "color": {
+                "user": "34",
+                "at": "37",
+                "host": "34"
+            }
+        },
 
-    "separator",
+        "separator",
 
-    "os",
-    "kernel",
-    "uptime",
-    "packages",
+        {
+            "type": "os",
+            "keyColor": "36"
+        },
+        /*
+        {
+            "type": "kernel",
+            "keyColor": "36"
+        },*/
+        {
+            "type": "uptime",
+            "keyColor": "36"
+        },/*
+        {
+            "type": "packages",
+            "keyColor": "36"
+        },*/
+        {
+            "type": "battery",
+            "keyColor": "36"
+        },
+        "separator",
 
-    "separator",
+        {
+            "type": "de",
+            "keyColor": "36"
+        },
+        {
+            "type": "wm",
+            "keyColor": "36"
+        },
 
-    "de",
-    "wm",
+        "separator",
+        
+        {
+            "type": "cpu",
+            "keyColor": "36"
+        },
+        {
+            "type": "gpu",
+            "keyColor": "36"
+        },
+        {
+            "type": "memory",
+            "keyColor": "36"
+        },
+        {
+            "type": "disk",
+            "keyColor": "36"
+        },
+       
 
-    "separator",
+        "separator",
 
-    "host",
-    "cpu",
-    "gpu",
-    "memory",
-    "disk",
-    "battery",
-
-    "separator",
-
-    "wmtheme",
-    "theme",
-    "separator",
-    "break",
-    "colors"
-  ]
+        "wmtheme",
+        "theme",
+        "separator",
+        "break",
+        "colors"
+    ]
 }
