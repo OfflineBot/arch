@@ -66,10 +66,11 @@ export default function Stats(gdkmonitor: number) {
         name={"stats"}
         visible={false}
         className="Stats"
-        exclusivity={Astal.Exclusivity.EXCLUSIVE}
-        keymode={Astal.Keymode.ON_DEMAND} 
+        exclusivity={Astal.Exclusivity.EXCUSIVE}
+        keymode={Astal.Keymode.NONE}
         monitor={gdkmonitor}
         anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
+        //layer={Astal.Layer.BACKGROUND}
         application={App}>
         <box
             className={"stats-main-box"}

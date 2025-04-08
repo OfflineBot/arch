@@ -3,7 +3,7 @@ font=Ubuntu
 
 clock
 timestr=%R
-datestr=%a, %e of %B
+datestr=%a, %e %B
 
 screenshots
 
@@ -35,7 +35,7 @@ line-clear-color=00000000
 line-caps-lock-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
-ring-color=7287fd
+ring-color=6894a8
 ring-clear-color=f5e0dc
 ring-caps-lock-color=fab387
 ring-ver-color=0b8bbb

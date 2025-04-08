@@ -24,7 +24,7 @@ let s:sky = "#89DCEB"
 let s:sapphire = "#74C7EC"
 " let s:blue = "#89B4FA"
 " let s:blue = "#7277e5"
-let s:blue = "#6894a8"
+let s:blue = "#7EB7E6"
 let s:lavender = "#B4BEFE"
 
 let s:text = "#CDD6F4"

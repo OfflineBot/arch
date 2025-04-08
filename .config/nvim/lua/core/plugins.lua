@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
 	-- install jsregexp (optional!:).
         run = "make install_jsregexp"
     })
-
+    use 'Wansmer/serenity'
     use { 'Issafalcon/lsp-overloads.nvim'}
     -- core
     use "williamboman/mason.nvim"
