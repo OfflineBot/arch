@@ -28,11 +28,6 @@ yadm clone https://github.com/OfflineBot/arch.git
 
 ## Additional Setup:
 
-Install packages i use like: 
-- Hyprland + hyprpaper + hyprlock (Desktop Environment)
-- Kitty (Terimal)
-- Neovim (Editor)
-- Zathura (PDF Viewer)
-
+To setup my SDDM config put the content from `.etc` and `.usr` in its place. (`.etc/filename.txt` would be `/etc/filename.txt`).
 
 
