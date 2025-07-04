@@ -9,8 +9,8 @@ My personal Arch Linux setup
 
 ## Screenshots
 
-![Screenshot1](./Pictures/screenshots/desktop1.png)
 ![Screenshot2](./Pictures/screenshots/desktop2.png)
+![Screenshot1](./Pictures/screenshots/desktop1.png)
 
 ## Setup:
 
