@@ -1,0 +1,125 @@
+
+@define-color bg_color rgba(24, 24, 24, 1.0);
+@define-color bg_color2 rgba(24, 24, 24, 0.0);
+@define-color bg_color_full rgba(24, 24, 24, 1.0);
+
+* {
+    box-shadow: none;
+}
+
+.steam-label {
+    color: #AAF0C1;
+}
+
+.topbar0, .topbar1, .topbar2 {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.topbar-content{
+    margin: 0px;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,0);
+    background-color: @bg_color;
+    border: 1px solid #444;
+    border-top: none; border-left: none; border-right: none;
+    border-radius: 0px;
+}
+
+.bar-item {
+    /*border: 1px solid #444;*/
+    padding: 2px 4px;
+    background-color: @bg_color2;
+    border-radius: 6px;
+}
+
+.bar-stat-item {
+    margin: 2px 4px;
+    padding: 0;
+}
+
+.bar-stat-date {
+    margin-left: 20px;
+}
+.bar-stat-time {
+    margin-right: 20px;
+}
+.bar-stat-ram {
+    min-width: 70px;
+    color: #E9D26C;
+}
+.bar-stat-cpu {
+    min-width: 70px;
+    color: #89BEB7;
+}
+.bar-stat-gpu {
+    min-width: 70px;
+    color: #7EB7E6;
+}
+.bar-stat-off {
+    color: #ed5c66;
+    min-width: 30px;
+    background-color: @bg_color2;
+    border: none;
+    outline: none;
+}
+
+.bar-label {
+    padding: 4px 10px;
+    background-color: @bg_color2;
+    margin: 4px 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.wk {
+    background-color: @bg_color2;
+    padding: 0px;
+    margin: 0px 0px;
+    border: none;
+    border-radius: 4px;
+} 
+.wk-focus {
+    background-color: @bg_color2;
+    padding: 4px 4px;
+    margin: 4px 0px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+.wk:hover {
+    color: #ddd;
+}
+
+.logout {
+    background-color: rgba(0,0,0,0.0);
+}
+
+.logout-item {
+    font-size: 190px;
+    margin: 30px;
+    padding: 40px;
+    color: #a89983;
+    border-radius: 8px;
+    background-color: @bg_color_full;
+    border: 1px solid #444;
+}
+
+.logout-item:hover {
+    background-color: @bg_color_full;
+    border-radius: 180px;
+}
+
+.logout-logout:hover {
+    color: #8ec07b;
+}
+.logout-poweroff:hover {
+    color: #fb4833;
+}
+.logout-reboot:hover {
+    color: #83a597;
+}
+
+
+.logout-text {
+    margin: 20px 40px;
+}
