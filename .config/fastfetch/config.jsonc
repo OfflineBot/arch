@@ -18,11 +18,10 @@
             "type": "os",
             "keyColor": "magenta"
         },
-        /*
         {
             "type": "kernel",
             "keyColor": "36"
-        },*/
+        },
         {
             "type": "uptime",
             "keyColor": "magenta"

@@ -12,16 +12,10 @@
     (box :orientation "horizontal" :halign "start" :space-evenly false :class "left-bar bar-item"
         (box
             (for ws in {workspace_data.workspaces}
-                (stack :same-size false :selected {ws.focused ? 1 : 0} :transition "slideright"
                     (button
-                        :class "wk"
+                        :class {ws.focused ? "wk wk-focus" : "wk"}
                         :onclick "hyprctl dispatch workspace ${ws.id}"
                         (label :text {ws.name}))
-                    (button
-                        :class "wk-focus"
-                        :onclick "hyprctl dispatch workspace ${ws.id}"
-                        (label :text {ws.name}))
-                )
             )
         )
         (box
@@ -32,8 +26,8 @@
 
 (defwidget stats [] 
     (box :orientation "horizontal" :halign "end" :space-evenly false :class "right-bar bar-item"
-        (label :text {" " + gpu + "%"} :class "bar-stat-item bar-stat-gpu" :tooltip "GPU")
-        (label :text {" " + cpu + "%"} :class "bar-stat-item bar-stat-cpu" :tooltip "CPU")
+        (label :text {"   " + gpu + "%"} :class "bar-stat-item bar-stat-gpu" :tooltip "GPU")
+        (label :text {"  " + cpu + "%"} :class "bar-stat-item bar-stat-cpu" :tooltip "CPU")
         (label :text {" " + ram + "%"} :class "bar-stat-item bar-stat-ram" :tooltip "RAM")
         (button :onclick "eww open --toggle logout" :class "bar-stat-item bar-stat-off"
             (label :text "")

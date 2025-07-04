@@ -17,7 +17,7 @@ while getopts "dtgrc" opt; do
             nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null || echo "0"
             ;;
         c)
-              mpstat 1 1 | awk '/Average/ { print 100 - $12 }'
+            mpstat 1 1 | awk '/Average/ { printf "%d\n", 100 - $12 }'
             ;;
         r)
             free | awk '/Mem:/ { printf("%.0f", $3/$2 * 100) }'

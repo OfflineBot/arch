@@ -79,9 +79,7 @@
     border-radius: 4px;
 } 
 .wk-focus {
-    background-color: @bg_color2;
-    padding: 4px 4px;
-    margin: 4px 0px;
+    margin: 4px 2px;
     border: 1px solid #999;
     border-radius: 4px;
 }
@@ -96,10 +94,10 @@
 
 .logout-item {
     font-size: 190px;
-    margin: 30px;
-    padding: 40px;
     color: #a89983;
     border-radius: 8px;
+    padding: 20px 90px;
+    margin: 20px;
     background-color: @bg_color_full;
     border: 1px solid #444;
 }
@@ -107,6 +105,7 @@
 .logout-item:hover {
     background-color: @bg_color_full;
     border-radius: 180px;
+    transition: 0.4s ease;
 }
 
 .logout-logout:hover {
@@ -119,7 +118,6 @@
     color: #83a597;
 }
 
-
 .logout-text {
-    margin: 20px 40px;
+
 }
