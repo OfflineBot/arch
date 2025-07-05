@@ -8,7 +8,8 @@ return {
         local alpha = require("alpha")
         local dashboard = require("alpha.themes.dashboard")
 
-        dashboard.section.header.opts.hl = 'Keyword'
+        -- get color from :highlight
+        dashboard.section.header.opts.hl = 'SpecialKey'
 
         dashboard.section.header.val = {
             [[                                                                       ]],
