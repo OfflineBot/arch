@@ -30,6 +30,14 @@ yadm clone https://github.com/OfflineBot/arch.git
 
 To setup my SDDM config put the content from `.etc` and `.usr` in its place. (`.etc/filename.txt` would be `/etc/filename.txt`).
 
+To apply `spicetify` run:
+
+```sh
+spicetify config current_theme SpicetifyDefault
+spicetify config color_scheme gruvbox
+spicetify apply
+```
+
 ## Extra Infos:
 
 Its possible that the icons dont match the screenshots because i have to switch between awesome icons and material icons depening on what works. 
