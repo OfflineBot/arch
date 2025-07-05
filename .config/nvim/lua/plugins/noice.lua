@@ -5,9 +5,11 @@ return {
         "MunifTanjim/nui.nvim",
         "rcarriga/nvim-notify",
     },
+
     config = function()
 
-        vim.api.nvim_set_hl(0, "MyBorderHighlight", { fg = "#aea7d6", bg = "NONE" })
+        vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = "#ebdbb2", bg = "NONE" })
+        vim.api.nvim_set_hl(0, "Keyword", { fg = "#ebdbb2", bg = "NONE" })
         require('noice').setup({
             notify = {
                 enabled = false,
@@ -27,7 +29,11 @@ return {
             views = {
                 cmdline_popup = {
                     win_options = {
-                        winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
+                        -- :highlight
+                        winhighlight = {
+                            NormalFloat = "NormalFloat",
+                            FloatBorder = "FloatBorder"
+                        },
                     },
                     position = {
                         row = 1,
@@ -38,8 +44,8 @@ return {
                         height = 1,
                     },
                     border = {
-                        style = "none",
-                        padding = { 2, 3 },
+                        style = "rounded",
+                        padding = { 0, 1 },
                     },
                 },
             },
