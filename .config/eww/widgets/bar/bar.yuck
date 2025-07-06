@@ -10,12 +10,12 @@
 
 (defwidget workspaces []
     (box :orientation "horizontal" :halign "start" :space-evenly false :class "left-bar bar-item"
-        (box
+        (box :space-evenly true :class "inner-left-bar"
             (for ws in {workspace_data.workspaces}
-                    (button
-                        :class {ws.focused ? "wk wk-focus" : "wk"}
-                        :onclick "hyprctl dispatch workspace ${ws.id}"
-                        (label :text {ws.name}))
+                (button
+                    :class {ws.focused ? "wk wk-focus" : "wk"}
+                    :onclick "hyprctl dispatch workspace ${ws.id}"
+                    (label :class {ws.focused ? "label-focus" : ""} :text {ws.name}))
             )
         )
         (box
@@ -37,7 +37,7 @@
 
 
 (defwidget middle_stats [] 
-    (box :orientation "horizontal" :halign "start" :space-evenly false :class "right-bar bar-item"
+    (box :orientation "horizontal" :halign "start" :space-evenly false :class "middle-bar bar-item"
         (label :text {date} :class "bar-stat-item bar-stat-date")
         (label :text {time} :class "bar-stat-item bar-stat-time")
     )

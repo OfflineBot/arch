@@ -1,10 +1,15 @@
 
-@define-color bg_color rgba(24, 24, 24, 1.0);
+@define-color bg_color rgba(24, 24, 24, 0.0);
 @define-color bg_color2 rgba(24, 24, 24, 0.0);
 @define-color bg_color_full rgba(24, 24, 24, 1.0);
 
 * {
     box-shadow: none;
+}
+
+.label-focus {
+    font-size: 20px;
+    color: #d3859a;
 }
 
 .steam-label {
@@ -15,20 +20,46 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
+
 .topbar-content{
-    margin: 0px;
+    margin: 6px 8px;
     margin-bottom: 0;
     background-color: rgba(0,0,0,0);
     background-color: @bg_color;
     border: 1px solid #444;
     border-top: none; border-left: none; border-right: none;
+    border: none;
     border-radius: 0px;
+}
+
+
+.right-bar {
+    background-color: @bg_color_full;
+    border-radius: 0 0 0 6px;
+    border: 1px solid #999;
+    border-top: none;
+    border-right: none;
+}
+
+.left-bar {
+    background-color: @bg_color_full;
+    border-radius: 0 0 6px 0;
+    border: 1px solid #999;
+    border-top: none;
+    border-left: none;
+}
+
+.middle-bar {
+    background-color: @bg_color_full;
+    border-radius: 0 0 6px 6px;
+    border: 1px solid #999;
+    border-top: none;
 }
 
 .bar-item {
     /*border: 1px solid #444;*/
     padding: 2px 4px;
-    background-color: @bg_color2;
+    border: 1px solid #999;
     border-radius: 6px;
 }
 
@@ -81,6 +112,7 @@
 .wk-focus {
     margin: 4px 2px;
     border: 1px solid #999;
+    border: none;
     border-radius: 4px;
 }
 
