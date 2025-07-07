@@ -1,5 +1,4 @@
 
-
 (defpoll time :interval "1s" :initial "00:00:00" "bash ~/.config/eww/scripts/stats.sh -t")
 (defpoll date :interval "30s" :initial "00/00/00" "bash ~/.config/eww/scripts/stats.sh -d")
 (defpoll ram :interval "3s" :initial "0" "bash ~/.config/eww/scripts/stats.sh -r")
@@ -8,18 +7,50 @@
 
 (defvar workspace_data "[]")
 
-(defwidget workspaces []
-    (box :orientation "horizontal" :halign "start" :space-evenly false :class "left-bar bar-item"
-        (box :space-evenly true :class "inner-left-bar"
-            (for ws in {workspace_data.workspaces}
-                (button
-                    :class {ws.focused ? "wk wk-focus" : "wk"}
-                    :onclick "hyprctl dispatch workspace ${ws.id}"
-                    (label :class {ws.focused ? "label-focus" : ""} :text {ws.name}))
+
+(defwidget workspaces_small []
+    (box :space-evenly false
+        (box :halign "start"
+            :class "arch-flex"
+            (image 
+                :path "/home/offlinebot/Downloads/arch.svg"
+                :image-height 20
             )
         )
-        (box
-            (label :text {workspace_data.active_window} :class "bar-label")
+        (box :orientation "horizontal" :halign "start" :space-evenly false :class "left-bar bar-item"
+            (box :space-evenly true :class "inner-left-bar"
+                (for ws in {workspace_data.workspaces}
+                    (button
+                        :class {ws.focused ? "wk wk-focus" : "wk"}
+                        :onclick "hyprctl dispatch workspace ${ws.id}"
+                        (label :class {ws.focused ? "label-focus" : ""} :text {ws.name}))
+                )
+            )
+        )
+    )
+)
+
+(defwidget workspaces []
+    (box :space-evenly false
+        (box :halign "start"
+            :class "arch-flex"
+            (image 
+                :path "/home/offlinebot/Downloads/arch.svg"
+                :image-height 20
+            )
+        )
+        (box :orientation "horizontal" :halign "start" :space-evenly false :class "left-bar bar-item"
+            (box :space-evenly true :class "inner-left-bar"
+                (for ws in {workspace_data.workspaces}
+                    (button
+                        :class {ws.focused ? "wk wk-focus" : "wk"}
+                        :onclick "hyprctl dispatch workspace ${ws.id}"
+                        (label :class {ws.focused ? "label-focus" : ""} :text {ws.name}))
+                )
+            )
+            (box
+                (label :text {workspace_data.active_window} :class "bar-label")
+            )
         )
     )
 )
@@ -50,6 +81,14 @@
         (middle_stats)
         (stats))
 )
+
+(defwidget topbar_main_small []
+    (centerbox :class "topbar-content"
+        (workspaces_small)
+        (middle_stats)
+        (stats))
+)
+
 
 (defwindow topbar0
     :monitor 0
@@ -97,5 +136,5 @@
     :windowtype "dock"
     :exclusive true
     :wm-ignore false
-    (topbar_main))
+    (topbar_main_small))
 
