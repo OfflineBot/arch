@@ -2,6 +2,7 @@
 @define-color bg_color rgba(24, 24, 24, 0.0);
 @define-color bg_color2 rgba(24, 24, 24, 0.0);
 @define-color bg_color_full rgba(24, 24, 24, 1.0);
+@define-color border_color #ebdbb2;
 
 * {
     box-shadow: none;
@@ -35,7 +36,7 @@
 .arch-flex {
     background-color: @bg_color_full;
     border-radius: 6px;
-    border: 1px solid #999;
+    border: 1px solid @border_color;
     padding: 0px 10px;
     margin-right: 10px;
 }
@@ -43,7 +44,7 @@
 .right-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 0 6px;
-    border: 1px solid #999;
+    border: 1px solid @border_color;
     border-top: none;
     border-right: none;
 }
@@ -51,7 +52,7 @@
 .left-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 6px 0;
-    border: 1px solid #999;
+    border: 1px solid @border_color;
     border-top: none;
     border-left: none;
 }
@@ -59,14 +60,14 @@
 .middle-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 6px 6px;
-    border: 1px solid #999;
+    border: 1px solid @border_color;
     border-top: none;
 }
 
 .bar-item {
     /*border: 1px solid #444;*/
     padding: 2px 4px;
-    border: 1px solid #999;
+    border: 1px solid @border_color;
     border-radius: 6px;
 }
 
