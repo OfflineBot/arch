@@ -1,4 +1,4 @@
- return {
+local _ = {
     "epwalsh/obsidian.nvim",
     version = "*",  -- recommended, use latest release instead of latest commit
     lazy = true,
@@ -11,14 +11,6 @@
 
     opts = {
         workspaces = {
-            {
-                name = "Deutsch-Mündlich",
-                path = "~/Schule/obsidian/Deutsch-Mündlich",
-            },
-            {
-                name = "Ethik-Mündlich",
-                path = "~/Schule/obsidian/Ethik-Mündlich"
-            },
         },
     },
 
@@ -34,3 +26,5 @@
         end, { noremap = false, expr = true })
     end,
 }
+
+return {}
