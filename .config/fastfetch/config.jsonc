@@ -58,6 +58,12 @@
             "type": "kernel"
         },
         {
+            "type": "command",
+            "key": " OS Age      ",
+            "keyColor": "magenta",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); days_difference=$(( (current - birth_install) / 86400 )); echo $days_difference days"
+        },
+        {
             "key": "Uptime       ",
             "keyColor": "magenta",
             "type": "uptime"
