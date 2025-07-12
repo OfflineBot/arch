@@ -13,7 +13,7 @@
         (box :halign "start"
             :class "arch-flex"
             (image 
-                :path "/home/offlinebot/Downloads/arch.svg"
+                :path "/home/offlinebot/.config/eww/icons/arch_white.svg"
                 :image-height 20
             )
         )
@@ -35,7 +35,7 @@
         (box :halign "start"
             :class "arch-flex"
             (image 
-                :path "/home/offlinebot/Downloads/arch.svg"
+                :path "/home/offlinebot/.config/eww/icons/arch_white.svg"
                 :image-height 20
             )
         )
