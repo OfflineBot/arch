@@ -10,16 +10,15 @@ alias vim="nvim"
 alias vi="vim"
 
 
-eval (dircolors -c ~/.dircolors | string replace 'LS_COLORS=' 'set -x LS_COLORS ' | string replace ';$' '' )
+# TTY Colors
+#eval (dircolors -c ~/.dircolors | string replace 'LS_COLORS=' 'set -x LS_COLORS ' | string replace ';$' '' )
 
 set -Ux TERMINAL alacritty
 set -x GOPROXY direct
-set -Ux fish_user_paths $HOME/.nix-profile/bin $fish_user_paths
-set -ga fish_user_paths /home/offlinebot/.nimble/bin
-set -x YDOTOOL_SOCKET $HOME/.ydotool_socket
 set -x XCOMPOSEFILE $HOME/.XCompose
+set -Ux PATH $HOME/Coding/nim/bin $PATH
 
-set fish_prompt ""
+set fish_greeting ""
 
 
 function cff
@@ -42,5 +41,5 @@ function fish_prompt
 end
 
 fish_add_path /home/offlinebot/.spicetify
-
 fish_add_path /home/offlinebot/.modular/bin
+
