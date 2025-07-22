@@ -59,13 +59,11 @@ return {
                     end
                 end
             }
-lspconfig["mojo"].setup({
-	cmd = { 'mojo-lsp-server' },
-	single_file_support = true,
-	capabilities = capabilities,
-	filetypes = { "mojo", "*.🔥" },
-})
-            vim.keymap.set("n", "m", vim.lsp.buf.hover, {})
+
+            vim.keymap.set("n", "m", function()
+              vim.lsp.buf.hover({border="rounded"})
+            end, {})
+            --vim.keymap.set("n", "m", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})

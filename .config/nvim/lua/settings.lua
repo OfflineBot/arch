@@ -61,7 +61,7 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
 
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "tex",
+  pattern = {"tex", "julia"},
   callback = function()
     vim.bo.indentexpr = ""
   end,
