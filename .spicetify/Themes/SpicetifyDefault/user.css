@@ -120,7 +120,7 @@ div.GlueDropTarget.personal-library > *.active {
 }
 
 .main-contextMenu-menu {
-	background-color: var(--spice-button-active);
+	background-color: var(--spice-card);
 }
 
 .main-contextMenu-menuHeading,
