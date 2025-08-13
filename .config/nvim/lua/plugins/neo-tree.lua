@@ -16,7 +16,15 @@ return {
             },
             filters = {
                 custom = { "node_modules" }
-            }
+            },
+            event_handlers = {
+                {
+                    event = "file_opened",
+                    handler = function(file_path)
+                        require("neo-tree.command").execute({ action = "close" })
+                    end,
+                }
+            },
         })
 		vim.keymap.set("n", "<C-n>", "<Cmd>Neotree filesystem toggle right<CR>", {})
 		vim.keymap.set("n", "<leader>bf", "<Cmd>Neotree buffers reveal float<CR>", {})
