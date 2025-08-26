@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
 read cursor_x cursor_y < <(hyprctl cursorpos -j | jq -r '"\(.x) \(.y)"')

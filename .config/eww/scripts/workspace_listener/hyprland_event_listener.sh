@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 update_wk_with_hyprctl() {
     local tmpfile=$(mktemp)

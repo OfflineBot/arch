@@ -10,13 +10,13 @@
 
 (defwidget workspaces_small []
     (box :space-evenly false
-        (box :halign "start"
-            :class "arch-flex"
-            (image 
-                :path "/home/offlinebot/.config/eww/icons/arch_white.svg"
-                :image-height 20
-            )
-        )
+        ;;(box :halign "start"
+        ;;    :class "arch-flex"
+        ;;    (image 
+        ;;        :path "/home/offlinebot/.config/eww/icons/arch_white.svg"
+        ;;        :image-height 20
+        ;;    )
+        ;;)
         (box :orientation "horizontal" :halign "start" :space-evenly false :class "left-bar bar-item"
             (box :space-evenly true :class "inner-left-bar"
                 (for ws in {workspace_data.workspaces}
@@ -32,13 +32,13 @@
 
 (defwidget workspaces []
     (box :space-evenly false
-        (box :halign "start"
-            :class "arch-flex"
-            (image 
-                :path "/home/offlinebot/.config/eww/icons/arch_white.svg"
-                :image-height 20
-            )
-        )
+        ;;(box :halign "start"
+        ;;    :class "arch-flex"
+        ;;    (image 
+        ;;        :path "/home/offlinebot/.config/eww/icons/arch_white.svg"
+        ;;        :image-height 20
+        ;;    )
+        ;;)
         (box :orientation "horizontal" :halign "start" :space-evenly false :class "left-bar bar-item"
             (box :space-evenly true :class "inner-left-bar"
                 (for ws in {workspace_data.workspaces}
@@ -57,7 +57,7 @@
 
 (defwidget stats [] 
     (box :orientation "horizontal" :halign "end" :space-evenly false :class "right-bar bar-item"
-        (label :text {"   " + gpu + "%"} :class "bar-stat-item bar-stat-gpu" :tooltip "GPU")
+        (label :text {"  " + gpu + "%"} :class "bar-stat-item bar-stat-gpu" :tooltip "GPU")
         (label :text {"  " + cpu + "%"} :class "bar-stat-item bar-stat-cpu" :tooltip "CPU")
         (label :text {" " + ram + "%"} :class "bar-stat-item bar-stat-ram" :tooltip "RAM")
         (button :onclick "eww open --toggle logout" :class "bar-stat-item bar-stat-off"
@@ -68,27 +68,52 @@
 
 
 (defwidget middle_stats [] 
-    (box :orientation "horizontal" :halign "start" :space-evenly false :class "middle-bar bar-item"
+    (button :class "middle-bar bar-item" :onclick "eww open --toggle colorthemechanger"
+        (box
         (label :text {date} :class "bar-stat-item bar-stat-date")
         (label :text {time} :class "bar-stat-item bar-stat-time")
-    )
+    ))
 )
 
 
-(defwidget topbar_main []
+(defwidget topbar_main_wk []
     (centerbox :class "topbar-content"
+        :namespace "bar-space"
         (workspaces)
         (middle_stats)
         (stats))
 )
 
-(defwidget topbar_main_small []
+(defwidget topbar_main_small_wk []
     (centerbox :class "topbar-content"
+        :namespace "bar-space"
         (workspaces_small)
         (middle_stats)
         (stats))
 )
 
+(defwidget colorbtn []
+    (box :orientation "horizontal" :class "color-item-bc"
+        (button :class "color-item c-gruv" :onclick "colordots theme set gruv && eww open --toggle colorthemechanger" (label :text ""))
+        (button :class "color-item c-catppuccin" :onclick "colordots theme set catppuccin && eww open --toggle colorthemechanger" (label :text ""))
+        (button :class "color-item c-transparent" :onclick "colordots theme set transparent && eww open --toggle colorthemechanger" (label :text ""))
+    )
+)
+
+
+(defwindow colorthemechanger
+    :monitor 0
+    :geometry (geometry 
+        :x "0%" 
+        :y "0%" 
+        :anchor "top center" 
+        :height "30px")
+    :stacking "fg"
+    :windowtype "dock"
+    :class "color-main"
+    :exclusive false
+    :wm-ignore false
+    (colorbtn))
 
 (defwindow topbar0
     :monitor 0
@@ -103,8 +128,7 @@
     :windowtype "dock"
     :exclusive true
     :wm-ignore false
-    (topbar_main))
-
+    (topbar_main_wk))
 
 
 (defwindow topbar1
@@ -120,7 +144,7 @@
     :windowtype "dock"
     :exclusive true
     :wm-ignore false
-    (topbar_main))
+    (topbar_main_wk))
 
 
 (defwindow topbar2
@@ -136,5 +160,5 @@
     :windowtype "dock"
     :exclusive true
     :wm-ignore false
-    (topbar_main_small))
+    (topbar_main_small_wk))
 

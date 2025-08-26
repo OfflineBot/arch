@@ -1,12 +1,31 @@
 
-@define-color bg_color #0a0c0f;
-@define-color bg_color2 #0a0c0f;
-@define-color bg_color_full #0a0c0f;
-@define-color border_color #777;
+@define-color bg_color rgba(24, 24, 24, 0.0);
+@define-color bg_color2 rgba(24, 24, 24, 0.0);
+@define-color bg_color_full rgba(24, 24, 24, 1.0);
+@define-color border_color #ebdbb2;
 
 * {
     box-shadow: none;
 }
+
+
+.colorthemechanger {
+    background-color: rgba(0, 0, 0, 0.0);
+    margin: 8px;
+}
+.color-item-bc {
+    background-color: @bg_color_full;
+    border: 1px solid @border_color;
+    border-radius: 8px;
+}
+.color-item {
+    border: 1px solid @border_color;
+    border-radius: 50px;
+    margin: 5px;
+}
+.c-gruv { background-color: #181818; }
+.c-catppuccin { background-color: #0a0c0f; }
+.c-transparent { background-color: #505050; }
 
 .label-focus {
     font-size: 20px;
@@ -28,12 +47,15 @@
     background-color: rgba(0,0,0,0);
     background-color: @bg_color;
     border: 1px solid #444;
-    border-radius: 8px;
+    border-top: none; border-left: none; border-right: none;
+    border: none;
+    border-radius: 0px;
 }
 
 .arch-flex {
     background-color: @bg_color_full;
     border-radius: 6px;
+    border: 1px solid @border_color;
     padding: 0px 10px;
     margin-right: 10px;
 }
@@ -41,6 +63,7 @@
 .right-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 0 6px;
+    border: 1px solid @border_color;
     border-top: none;
     border-right: none;
 }
@@ -48,6 +71,7 @@
 .left-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 6px 0;
+    border: 1px solid @border_color;
     border-top: none;
     border-left: none;
 }
@@ -55,12 +79,18 @@
 .middle-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 6px 6px;
+    border: 1px solid @border_color;
     border-top: none;
+}
+
+.bar0, .bar1, .bar2 { 
+background-color: rgba(0, 0, 0, 0.0);
 }
 
 .bar-item {
     /*border: 1px solid #444;*/
     padding: 2px 4px;
+    border: 1px solid @border_color;
     border-radius: 6px;
 }
 
@@ -127,9 +157,9 @@
 
 .logout-item {
     font-size: 190px;
-    color: #ccc;
+    color: #a89983;
     border-radius: 8px;
-    padding: 20px 90px;
+    padding: 30px 40px 30px 52px;
     margin: 20px;
     background-color: @bg_color_full;
     border: 1px solid #444;

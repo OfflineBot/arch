@@ -6,14 +6,14 @@
                         :y "0px"
         :anchor "center")
     :stacking "fg"
-    :namespace "custom-namespace"
     :class "logout"
     :reserve (struts :distance "40px" :side "top")
     :windowtype "dock"
     :exclusive true
     :wm-ignore false
     (centerbox :class "logout-box" :space-evenly false
-        (button :onclick "hyprctl dispatch exit"
+        (button 
+            :onclick "hyprctl dispatch exit; niri msg action quit --skip-confirmation"
             :class "logout-logout logout-item"
             (label 
                 :class "logout-text logout-text-logout" 

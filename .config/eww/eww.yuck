@@ -1,3 +1,5 @@
 
 (include "./widgets/bar/bar.yuck")
+(include "./widgets/bar-no-wk/bar.yuck")
 (include "./widgets/logout/logout.yuck")
+
