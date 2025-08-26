@@ -1,0 +1,30 @@
+{
+  "Username": "offlinebot",
+  "CurrentTheme": "catppuccin",
+  "Paths": [
+    "/home/offlinebot/.config/kitty/colors.conf",
+    "/home/offlinebot/.config/eww/eww.css",
+    "/home/offlinebot/.config/fuzzel/fuzzel.ini",
+    "/home/offlinebot/.config/hypr/themeing/themeing.conf"
+  ],
+  "KnownThemes": [
+    {
+      "ThemeName": "gruv",
+      "ExtraCommands": [
+        "swww img /home/offlinebot/Pictures/wallpaper/gruv/gruvbox-nix.png"
+      ]
+    },
+    {
+      "ThemeName": "catppuccin",
+      "ExtraCommands": [
+        "swww img /home/offlinebot/Pictures/wallpaper/catppuccin/sekiro.jpg"
+      ]
+    },
+    {
+      "ThemeName": "transparent",
+      "ExtraCommands": [
+        "swww img /home/offlinebot/Pictures/wallpaper/transparent/cyan_surface.jpg"
+      ]
+    }
+  ]
+}
