@@ -1,27 +1,36 @@
 
-@define-color bg_color rgba(10, 13, 15, 0.9);
-@define-color bg_color2 rgba(0, 0, 0, 0.0);
-@define-color bg_color_full rgba(0, 0, 0, 0.0);
-@define-color logoutbtns rgba(0, 0, 0, 0.2);
-@define-color border_color #777;
+@define-color bg_color rgba(24, 24, 24, 0.0);
+@define-color bg_color2 rgba(24, 24, 24, 0.0);
+@define-color bg_color_full rgba(24, 24, 24, 1.0);
+@define-color border_color #ebdbb2;
 
 * {
     box-shadow: none;
 }
 
-
+.center-clock {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+.center-clock-clock {
+    font-family: "Arkitech", sans-serif;
+    font-weight: bold;
+    font-size: 120px;
+    color: #a89983;
+    margin-right: 1200px;
+    margin-bottom: -900px;
+}
 .colorthemechanger {
     background-color: rgba(0, 0, 0, 0.0);
     margin: 8px;
 }
 .color-item-bc {
-    background-color: @bg_color;
+    background-color: @bg_color_full;
     border: 1px solid @border_color;
     border-radius: 8px;
 }
 .color-item {
-    border-radius: 50px;
     border: 1px solid @border_color;
+    border-radius: 50px;
     margin: 5px;
 }
 .c-gruv { background-color: #181818; }
@@ -30,7 +39,7 @@
 
 .label-focus {
     font-size: 20px;
-    color: #8bd5ca;
+    color: #d3859a;
 }
 
 .steam-label {
@@ -48,12 +57,15 @@
     background-color: rgba(0,0,0,0);
     background-color: @bg_color;
     border: 1px solid #444;
-    border-radius: 8px;
+    border-top: none; border-left: none; border-right: none;
+    border: none;
+    border-radius: 0px;
 }
 
 .arch-flex {
     background-color: @bg_color_full;
     border-radius: 6px;
+    border: 1px solid @border_color;
     padding: 0px 10px;
     margin-right: 10px;
 }
@@ -61,6 +73,7 @@
 .right-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 0 6px;
+    border: 1px solid @border_color;
     border-top: none;
     border-right: none;
 }
@@ -68,6 +81,7 @@
 .left-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 6px 0;
+    border: 1px solid @border_color;
     border-top: none;
     border-left: none;
 }
@@ -75,19 +89,24 @@
 .middle-bar {
     background-color: @bg_color_full;
     border-radius: 0 0 6px 6px;
+    border: 1px solid @border_color;
     border-top: none;
+}
+
+.bar0, .bar1, .bar2 { 
+background-color: rgba(0, 0, 0, 0.0);
 }
 
 .bar-item {
     /*border: 1px solid #444;*/
     padding: 2px 4px;
+    border: 1px solid @border_color;
     border-radius: 6px;
 }
 
 .bar-stat-item {
     margin: 2px 4px;
     padding: 0;
-    color: #eee;
 }
 
 .bar-stat-date {
@@ -123,14 +142,12 @@
     border: 1px solid #444;
     border-radius: 6px;
     font-size: 14px;
-    color: #eee;
 }
 .wk {
     background-color: @bg_color2;
     padding: 0px;
     margin: 0px 0px;
     border: none;
-    color: #eee;
     border-radius: 4px;
 } 
 .wk-focus {
@@ -144,23 +161,22 @@
     color: #ddd;
 }
 
-
 .logout {
     background-color: rgba(0,0,0,0.0);
 }
 
 .logout-item {
     font-size: 190px;
-    color: #ccc;
+    color: #a89983;
     border-radius: 8px;
     padding: 30px 40px 30px 52px;
     margin: 20px;
-    background-color: @logoutbtns;
+    background-color: @bg_color_full;
     border: 1px solid #444;
 }
 
 .logout-item:hover {
-    background-color: @logoutbtns;
+    background-color: @bg_color_full;
     border-radius: 100px;
     transition: 0.4s ease;
 }

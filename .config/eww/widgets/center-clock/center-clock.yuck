@@ -1,0 +1,21 @@
+
+(defwidget centerclock []
+    (label :class "center-clock-clock" :text "${time}")
+)
+
+
+(defwindow center-clock
+    :monitor 0
+    :geometry (geometry 
+        :anchor "bottom left"
+        :x "0px" 
+        :y "0px" 
+        :width "100%"
+        :height "100%")
+    :stacking "bg"
+    :windowtype "dock"
+    :class "center-clock"
+    :exclusive false
+    :wm-ignore true
+    (centerclock))
+

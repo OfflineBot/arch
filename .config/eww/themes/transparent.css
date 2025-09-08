@@ -9,7 +9,16 @@
     box-shadow: none;
 }
 
+.center-clock {
+    background-color: rgba(0, 0, 0, 0.0);
+}
 
+.center-clock-clock {
+    font-family: "Arkitech", sans-serif;
+    font-weight: bold;
+    font-size: 180px;
+    color: white;
+}
 .colorthemechanger {
     background-color: rgba(0, 0, 0, 0.0);
     margin: 8px;

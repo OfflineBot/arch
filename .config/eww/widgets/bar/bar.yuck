@@ -92,28 +92,6 @@
         (stats))
 )
 
-(defwidget colorbtn []
-    (box :orientation "horizontal" :class "color-item-bc"
-        (button :class "color-item c-gruv" :onclick "colordots theme set gruv && eww open --toggle colorthemechanger" (label :text ""))
-        (button :class "color-item c-catppuccin" :onclick "colordots theme set catppuccin && eww open --toggle colorthemechanger" (label :text ""))
-        (button :class "color-item c-transparent" :onclick "colordots theme set transparent && eww open --toggle colorthemechanger" (label :text ""))
-    )
-)
-
-
-(defwindow colorthemechanger
-    :monitor 0
-    :geometry (geometry 
-        :x "0%" 
-        :y "0%" 
-        :anchor "top center" 
-        :height "30px")
-    :stacking "fg"
-    :windowtype "dock"
-    :class "color-main"
-    :exclusive false
-    :wm-ignore false
-    (colorbtn))
 
 (defwindow topbar0
     :monitor 0

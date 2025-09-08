@@ -22,3 +22,4 @@ while getopts "tgc" opt; do
     esac
 
 done
+
